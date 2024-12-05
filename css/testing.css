@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+}
+
+.recipe-card {
+    width: 20vw;
+    background-color: lightpink;
+    text-align: center;
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column; */
+
+    padding: 2rem;
+    margin: 2rem;
+
+    .pic {
+        width: 80%;
+        aspect-ratio: 1/1;
+        background-color: white;
+        margin: 0 auto;
+    }
+}
+
+.search {
+    text-align: center;
+    margin: 2rem;
+}

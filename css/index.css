@@ -1,0 +1,116 @@
+@font-face {
+    font-family: nohemi-black;
+    src: url(../fonts/Nohemi-Black.otf);
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: poppins-regular;
+    src: url(../fonts/poppins-regular-webfont.woff),
+        url(../fonts/poppins-regular-webfont.woff2);
+}
+
+@font-face {
+    font-family: poppins-extrabold;
+    src: url(../fonts/poppins-extrabold-webfont.woff),
+        url(../fonts/poppins-extrabold-webfont.woff2);
+}
+
+
+@font-face {
+    font-family: skranji-bold;
+    src: url(../fonts/skranji-bold-webfont.woff2),
+        url(../fonts/skranji-bold-webfont.woff);
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    --color-blue: #091057;
+
+    --color-yellow-pale: #fefef4;
+    --color-yellow: #ffc502;
+    --color-yellow-2: #f8ba57;
+    --color-orange: #ff8400;
+
+    --font-regular: poppins-regular;
+    --font-bold: skranji-bold;
+    --font-extrabold: poppins-extrabold;
+
+}
+
+body {
+    margin: 0;
+    margin-bottom: 4rem;
+    font-family: var(--font-regular);
+    
+    /* display: grid;
+    grid-template-columns: 4.5rem repeat(12, 1fr) 4.5rem;
+    column-gap: 2rem; */
+
+    background-color: var(--color-yellow);
+}
+
+/* navbar */
+
+.logo {
+    width: 100px;
+}
+
+h1 {
+    margin: 0;
+    font-family: skranji-bold;
+    font-size: 2rem;
+    margin-top: 0.9rem;
+}
+
+nav {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+
+    background-color: var(--color-yellow-pale);
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.logo-container {
+    text-align: center;
+    height: 100px;
+}
+
+.navbar {
+
+    a {
+        color: black;
+        font-family: var(--font-bold);
+        display: inline-block;
+        
+        padding: 1rem 2rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-orange);
+    transition: all 0.2s ease;
+}
+
+.footer {
+    background-color: var(--color-yellow-pale);
+    text-align: center;
+}
