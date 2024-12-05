@@ -150,6 +150,11 @@ a:hover {
     row-gap: 2rem;
 }
 
+
+.info-mobile {
+    display: none;
+}
+
 .description-mobile {
     display: none;
 }
@@ -166,7 +171,7 @@ a:hover {
     box-shadow: 12px 12px var(--color-orange);
 }
 
-.info {
+.info-desktop {
 
     display: flex;
     gap: 3rem;
@@ -263,8 +268,67 @@ h3 {
     .overview {
         margin: 2rem;
 
-        
+        .title {
+            font-size: 2rem;
+        }
     }
+
+    .info-desktop {
+        display: none;
+    }
+
+    .info-mobile {
+        grid-column: 1/span 2;
+        display: flex;
+        gap: 3rem;
+        justify-content: center;
+
+        margin: 2rem;
+        padding: 2rem 0;
+        border: 2px solid var(--color-orange);
+        border-radius: 20px;
+
+
+        div {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .icon {
+            margin: 0 auto;
+        }
+
+        img {
+            width: 45px;
+            text-align: center;
+        }
+
+
+        p {
+            margin: 0;
+        }
+
+    }
+
+    .ingredients, .steps-detail {
+        margin: 2rem;
+        align-items: flex-start;
+    }
+
+    .steps-image {
+        img {
+            object-fit: contain;
+
+        }
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+
+
 
 
 }
@@ -289,12 +353,43 @@ h3 {
         display: none;
     }
 
+
+    .ingredients, .steps-detail, .overview  {
+        grid-template-columns: 1fr;
+
+        h2 {
+            grid-column: 1/1;
+        }
+    }
+
+    /* .ingredients {
+        .ingredients-image {
+            grid-column: 1/span 2;
+        }
+
+        ul {
+            grid-column: 1/span 2;
+        }
+    } */
+
+    .steps-detail {
+
+            img {
+                width: 100%;
+            }
+    }
+
+
     .description-mobile {
         display: block;
     }
 
     .description-desktop {
         display: none;
+    }
+
+    .info-mobile {
+        grid-column: 1/1;
     }
 
 }

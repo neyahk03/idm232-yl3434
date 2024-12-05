@@ -1,8 +1,24 @@
-function performSearch() {
-    const searchInput = document.getElementById("searchInput").value;
+const descriptionDesktop = document.getElementsByClassName('description-desktop');
+const descriptionMobile = document.getElementsByClassName('description-mobile');
+const infoDesktop = document.getElementsByClassName('info-desktop');
+const infoMobile = document.getElementsByClassName('info-mobile');
 
-    // Show an error message regardless of the input
-    const errorMessage = document.getElementById("error-message");
-    errorMessage.style.display = "block";
-    errorMessage.textContent = `No results found for "${searchInput}". Please try again.`;
-}
+const screenWidth = window.innerWidth;
+
+
+function checkWidthAndChange() {
+    if (screenWidth < 950) {
+      infoMobile.style.display = "block";
+
+    } else if (screenWidth >=  && screenWidth < 950) {
+      // Do something for medium screens (e.g., tablets)
+      
+    } else {
+      // Do something for large screens (e.g., desktops)
+      
+    }
+  }
+  
+  // Call the function on page load and when the window is resized
+  checkWidthAndChange(); 
+  window.addEventListener('resize', checkWidthAndChange);

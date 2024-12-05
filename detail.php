@@ -89,7 +89,7 @@ if (!$recipe) {
 
             <!-- Recipe Information -->
 
-            <div class="info">
+            <div class="info-desktop">
                 <div class="cook-time">
                     <div class="icon"><img src="images/clock-orange-icon.png" alt="clock icon"></div>
                     <p><?php echo $recipe['cook_time']; ?></p>
@@ -112,9 +112,34 @@ if (!$recipe) {
                 </div>
             
             </div>
+
+            
             
         </div>
 
+        <div class="info-mobile">
+                <div class="cook-time">
+                    <div class="icon"><img src="images/clock-orange-icon.png" alt="clock icon"></div>
+                    <p><?php echo $recipe['cook_time']; ?></p>
+                </div>
+
+                <div class="serving-size">
+                    <div class="icon"><img src="images/serving-orange-icon.png" alt="serving icon"></div>
+                    <p><?php echo $recipe['serving_size']; ?></p>
+                </div>
+
+                <div class="protein">
+                    <div class="icon"><img src="images/meat-orange-icon.png" alt="meat icon"></div>
+                    <p><?php echo $recipe['protein']; ?></p>
+                </div>
+
+                <div class="calories">
+                    <div class="icon"><img src="images/calories-orange-icon.png" alt="calories icon"></div>
+                    <p><?php echo $recipe['calories']; ?></p>
+
+                </div>
+            
+            </div>
 
     </div>
 
@@ -175,7 +200,7 @@ if (!$recipe) {
 
                     
 
-               
+        <script src="script/index.js"></script>
     </div>
 </body>
 </html>
