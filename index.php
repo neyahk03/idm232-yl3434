@@ -1,3 +1,19 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_error', 1);
+ini_set('display_startup_errors', 1);
+
+require_once 'includes/database.php';
+
+// require_once 'includes/db.php';
+
+$randomStatement = $connection->prepare('SELECT * FROM recipes_test_run ORDER BY RAND() LIMIT 3');
+$randomStatement->execute();
+$randomRecipes = $randomStatement->get_result()->fetch_all(MYSQLI_ASSOC); 
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +31,7 @@
     <nav>
         <div class="top">
             <h1>The</h1>
-            <a class="logo-container" href="index.html">
+            <a class="logo-container" href="index.php">
             <img class="logo" src="images/logo.png" alt="logo">
             </a>
         </div>
@@ -29,6 +45,37 @@
         
 
     </nav>
+
+    <h1 class="title">Welcome to our home</h1>
+    <h3>Try our most popular recipes</h3>
+
+
+    <div class="card-container">
+        <?php if (!empty($randomRecipes)): ?>
+            <?php foreach ($randomRecipes as $randomRecipe): ?>
+                <a href="detail.php?id=<?php echo ($randomRecipe['id']); ?>">
+                    <div class="card">
+                        <!-- Recipe Image -->
+                        <img src="images/<?php echo ($randomRecipe['main_image']); ?>" alt="Recipe Image" class="pic">
+                        <div class="name">
+                            <!-- Recipe Title and Subtitle -->
+                        <h2 class="recipe-title"><?php echo ($randomRecipe['title']); ?></h2>
+                        <p class="recipe-subtitle"><?php echo ($randomRecipe['subtitle']); ?></p>
+                        </div>
+                        
+                    </div>
+                </a>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>No recipes found.</p>
+        <?php endif; ?>
+    </div>
+
+    <button class="view-all">View all recipes</button>
+
+
+
+
 
     
 

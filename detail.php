@@ -5,6 +5,8 @@ ini_set('display_startup_errors', 1);
 
 require_once 'includes/database.php';
 
+// require_once 'includes/db.php';
+
 // Check if an ID is provided in the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     echo "No recipe ID provided.";
@@ -65,17 +67,25 @@ if (!$recipe) {
 
     <div class="overview">
         <!-- recipe image -->
+        <div class="description-mobile">
+                <h1 class="title"><?php echo $recipe['title']; ?></h1>
+                <h3 class="subtitle"><?php echo $recipe['subtitle']; ?></h3>
+            </div>
+
         <div class="recipe-image">
             <img src="images/<?php echo $recipe['main_image']; ?>" alt="Recipe Image" class="recipe-image">
         </div>
             
 
-        <div class="description">
-            <h1 class="title"><?php echo $recipe['title']; ?></h1>
-            <h3 class="subtitle"><?php echo $recipe['subtitle']; ?></h3>
+        <div>
+            <div class="description-desktop">
+                <h1 class="title"><?php echo $recipe['title']; ?></h1>
+                <h3 class="subtitle"><?php echo $recipe['subtitle']; ?></h3>
+            </div>
+            
 
             <!-- Recipe Description -->
-            <p class="description"><?php echo $recipe['description']; ?></p>
+            <p><?php echo $recipe['description']; ?></p>
 
             <!-- Recipe Information -->
 

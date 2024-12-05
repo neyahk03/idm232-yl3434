@@ -5,6 +5,8 @@ ini_set('display_startup_errors', 1);
 
 require_once 'includes/database.php';
 
+// require_once 'includes/db.php';
+
 $statement = $connection->prepare('SELECT * FROM recipes_test_run');
 $statement->execute();
 $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -72,7 +74,7 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
     </nav>
 
     <div>
-        <p class="question">What are you feeling today?</p>
+        <p class="question title">What are you feeling today?</p>
 
         <!-- search form -->
         <form action="recipes.php" method="get" class="search-bar">
@@ -115,7 +117,7 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
 
             <!-- Reset Button -->
             <form action="recipes.php" method="get">
-                <button type="submit" class="reset-button">Reset Filters</button>
+                <button class="reset" type="submit" class="reset-button">Reset Filters</button>
             </form>
         </div>
     </div>
@@ -143,6 +145,7 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
         <p class="error">No recipes found matching "<?php echo htmlspecialchars($search); ?>"</p>
     <?php endif; ?>
 </div>
+
 
 
 

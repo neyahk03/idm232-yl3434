@@ -35,6 +35,8 @@ html {
     --color-yellow: #ffc502;
     --color-yellow-2: #f8ba57;
     --color-orange: #ff8400;
+    --color-dark-orange: #ed633e;
+    --color-green: #91c03e;
 
     --font-regular: poppins-regular;
     --font-bold: skranji-bold;
@@ -105,6 +107,10 @@ nav {
         text-decoration: none;
     }
 
+    a:last-child {
+        padding-right: 0;
+    }
+
     
 }
 
@@ -142,6 +148,10 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 2rem;
+}
+
+.description-mobile {
+    display: none;
 }
 
 .recipe-image, .ingredients-image, .steps-image {
@@ -248,3 +258,46 @@ h3 {
     width: 80%;
     border-radius: 32px;
 }
+
+@media screen and (max-width: 950px) {
+    .overview {
+        margin: 2rem;
+
+        
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        a {
+            padding: 1rem 0;
+
+        }
+    }
+
+    .top h1 {
+        display: none;
+    }
+
+    .description-mobile {
+        display: block;
+    }
+
+    .description-desktop {
+        display: none;
+    }
+
+}
+
+
+

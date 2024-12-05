@@ -35,6 +35,8 @@ html {
     --color-yellow: #ffc502;
     --color-yellow-2: #f8ba57;
     --color-orange: #ff8400;
+    --color-dark-orange: #ed633e;
+    --color-green: #91c03e;
 
     --font-regular: poppins-regular;
     --font-bold: skranji-bold;
@@ -51,7 +53,7 @@ body {
     grid-template-columns: 4.5rem repeat(12, 1fr) 4.5rem;
     column-gap: 2rem; */
 
-    background-color: var(--color-yellow);
+    background-color: var(--color-yellow-pale);
 }
 
 /* navbar */
@@ -99,6 +101,10 @@ nav {
         
         padding: 1rem 2rem;
     }
+
+    a:last-child {
+        padding-right: 0;
+    }
 }
 
 a {
@@ -108,5 +114,77 @@ a {
 a:hover {
     color: var(--color-orange);
     transition: all 0.2s ease;
+}
+
+.intro {
+    text-align: center;
+}
+
+.title {
+    color: var(--color-orange);
+    font-size: 3rem;
+}
+
+.section-container {
+    /* display: flex;
+    gap: 2rem;
+    margin: 5rem 2rem; */
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 4rem  2rem;
+}
+
+.section {
+    border: 5px solid var(--color-orange);
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: 8px 8px var(--color-orange);
+
+    h2 {
+        font-family: var(--font-extrabold);
+        text-align: center;
+        color: var(--color-dark-orange);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .intro {
+        margin: 0 2rem;
+    }
+
+    .section-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+    nav {
+        padding: 1rem 2rem;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        a {
+            padding: 1rem 0;
+
+        }
+    }
+
+    .top h1 {
+        display: none;
+    }
+
+    .section-container {
+        margin-top: 2rem;
+    }
 }
 

@@ -31,10 +31,16 @@
 html {
     --color-blue: #091057;
 
+
+    --color-yellow-transparent: #fcf4d0;
+    --color-light-yellow: #fff4ce;
     --color-yellow-pale: #fefef4;
     --color-yellow: #ffc502;
     --color-yellow-2: #f8ba57;
     --color-orange: #ff8400;
+    --color-dark-orange: #ed633e;
+    /* --color-dark-orange: #b94c2e; */
+    --color-green: #91c03e;
 
     --font-regular: poppins-regular;
     --font-bold: skranji-bold;
@@ -99,6 +105,10 @@ nav {
         
         padding: 1rem 2rem;
     }
+
+    a:last-child {
+        padding-right: 0;
+    }
 }
 
 a {
@@ -115,42 +125,53 @@ a:hover {
 .question {
     text-align: center;
     margin-top: 2rem;
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-family: skranji-bold;
+    margin-bottom: 1rem;
+}
+
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
 }
 
 .search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
-    
+    margin: 1.5rem 0;
 }
 
 .search-bar input {
-    padding: 15px;
-    font-size: 1rem;
+    padding: 1.2rem;
+    font-size: 1.1rem;
     border: 4px solid var(--color-orange);
-    border-radius: 30px 0 0 30px;
+    border-radius: 2rem 0 0 2rem;
     width: 300px;
     outline: none;
     border-right: none;
+    box-sizing: border-box; 
 }
 
 .search-bar button {
-    background-color: var(--color-yellow-2);
-    color: white;
+    background-color: var(--color-orange);
+    color: black;
     border: 4px solid var(--color-orange);
-    border-radius: 0 30px 30px 0; 
-    padding: 14px 20px;
+    border-radius: 0 2rem 2rem 0;
+    padding: 1.2rem;
+    font-size: 1.1rem; /* Match input's font size */
     cursor: pointer;
-    font-family: Poppins;
-    border-left: none; 
+    outline: none;
+    border-left: none;
+    box-sizing: border-box; 
+    display: flex;
+    align-items: center; /* Center text within the button */
+    justify-content: center;
 }
 
-.search-bar button:hover {
-    background-color: var(--color-orange); 
-}
 
 .filter-button {
     display: flex;
@@ -161,21 +182,25 @@ a:hover {
         cursor: pointer;
         padding: 1rem;
         background-color: white;
-        border: 0px;
-        border-radius: 16px;
+        border: none;
+        border-radius: 2rem;
+        font-size: 1rem;
+        transition: background-color 0.2s ease-out, transform 0.2s ease-out;
     }
 
     button:hover {
         background-color: var(--color-orange);
-        transition: transform 0.2s;
+        transform: translate(-1px, -1px);
+        color: var(--color-yellow-pale);
     }
 }
+
 
 
 h2 {
     font-family: var(--font-bold);
     text-align: center;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
 }
 
 .container {
@@ -203,15 +228,18 @@ h2 {
 }
 
 .card {
-    background-color: var(--color-yellow-pale);
+    background-color: var(--color-light-yellow);
+    
+    /* border: 5px solid var(--color-dark-orange); */
+    color: black;
     border-radius: 24px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     text-align: center;
     padding: 1rem;
-    color: black;
     height: 100%;
+    transition: all 0.15s ease;
 
 
     .pic {
@@ -222,11 +250,11 @@ h2 {
 
     }
 
-    h3 {
-        margin: 0;
-        margin-top: 1rem;
+    p {
+        margin-top: 0;
+    }
 
-    } 
+
 }
 
 a {
@@ -235,5 +263,72 @@ a {
 
 .card:hover {
     box-shadow: 12px 12px var(--color-orange);
+    /* transform: translate(-8px, -8px); */
 }
 
+@media screen and (max-width: 950px) {
+    .title {
+        margin: 0 2rem;
+        margin-top: 2rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr) ;
+    }
+
+    .filter-button {
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+    nav {
+        padding: 1rem 2rem;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        a {
+            padding: 1rem 0;
+
+        }
+    }
+
+    .top h1 {
+        display: none;
+    }
+
+    .container {
+        grid-template-columns: 1fr ;
+        margin: 1rem;
+
+    }
+
+
+    .search-bar input {
+        padding: 1rem;
+        font-size: 1rem;
+        border: 3px solid var(--color-orange);
+        border-radius: 2rem 0 0 2rem;
+        width: 200px;
+    }
+
+    .search-bar button {
+        border: 3px solid var(--color-orange);
+        padding: 1rem;
+        font-size: 1rem; 
+    }
+
+}
