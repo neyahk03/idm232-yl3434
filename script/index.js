@@ -1,24 +1,17 @@
-const descriptionDesktop = document.getElementsByClassName('description-desktop');
-const descriptionMobile = document.getElementsByClassName('description-mobile');
-const infoDesktop = document.getElementsByClassName('info-desktop');
-const infoMobile = document.getElementsByClassName('info-mobile');
-
-const screenWidth = window.innerWidth;
+const backtotop = document.getElementById('back-to-top');
 
 
-function checkWidthAndChange() {
-    if (screenWidth < 950) {
-      infoMobile.style.display = "block";
-
-    } else if (screenWidth >=  && screenWidth < 950) {
-      // Do something for medium screens (e.g., tablets)
-      
-    } else {
-      // Do something for large screens (e.g., desktops)
-      
-    }
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 140) {
+    backtotop.classList.add('active');
+  } else {
+    backtotop.classList.remove('active');
   }
-  
-  // Call the function on page load and when the window is resized
-  checkWidthAndChange(); 
-  window.addEventListener('resize', checkWidthAndChange);
+});
+
+backtotop.addEventListener('click', () => {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+  });
+});

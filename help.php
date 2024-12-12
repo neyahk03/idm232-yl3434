@@ -35,39 +35,34 @@
         <h3 class="subtitle">Here's how to make the most of our website to find and explore delicious recipes easily.</h3>
     </div>
 
-    <div class="section-container">
     <div class="section">
+
         <h2>Search for Recipes</h2>
         <ul>
             <li>Use the <strong>Search Bar</strong> to quickly find recipes by entering keywords such as dish name, ingredients, or cuisine type.</li>
             <li><strong>Example: </strong>Type "egg" to see all related recipes.</li>
         </ul>
-    </div>
 
-    <div class="section">
+
+
         <h2>Using Filters</h2>
         <ul>
             <li>Narrow down your recipe choices by clicking on the filter button.</li>
             <li>Click the <strong>Reset Filter</strong> button to remove all applied filters and view the full recipe list again.</li>
         </ul>
-    </div>
 
-    <div class="section">
         <h2>Viewing Recipe Details</h2>
         <ul>
             <li>Browse the available recipes displayed as cards.</li>
             <li>Click on a <strong>Recipe Card </strong>to access the detailed recipe page, which includes: Description, Ingredients, and Step-by-step instructions.</li>
         </ul>
     </div>
-    </div>
-
-    
 
 
-
-    
 
 
     <script src="/script/index.js"></script>
+
+    
 </body>
 </html>

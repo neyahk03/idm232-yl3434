@@ -46,7 +46,6 @@ html {
 
 body {
     margin: 0;
-    margin-bottom: 4rem;
     font-family: var(--font-regular);
     
     /* display: grid;
@@ -141,43 +140,121 @@ a:hover {
     color: var(--color-yellow-pale);
 } */
 
+/* back to top button */
+.back-to-top {
+    position: fixed;
+    z-index: 1000;
+    right: 3rem;
+    bottom: 1rem;
+    cursor: pointer;
+    /* display: none; */
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+   
+
+
+    img {
+        width: 45px;
+        background-color: var(--color-dark-orange);
+        border-radius: 90px;
+        padding: 0.5rem;
+    }
+
+}
+
+.back-to-top.active {
+    bottom: 2rem;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.back-to-top img:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* back button */
+.back {
+    padding: 0 10rem;
+    display: inline-black;
+    
+    
+    a {
+        text-decoration: none;
+        color: var(--color-orange);
+
+    }
+
+    a:active {
+        color: var(--color-orange);
+    }
+
+    img {
+        width: 30px;
+    }
+}
+
 /* recipe detail */
 
 .overview, .ingredients, .steps-detail {
-    margin: 3rem 10rem;
+    margin: 3rem 6rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 2rem;
 }
 
-
-.info-mobile {
-    display: none;
-}
-
-.description-mobile {
-    display: none;
+.overview {
+    grid-template-areas: 
+    "a b"
+    "a c"
+    "a d";
+    row-gap: 0;
 }
 
 .recipe-image, .ingredients-image, .steps-image {
     border-radius: 20px;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
+    text-align: center;
+}
+
+.recipe-image {
+    grid-area: a;
+    align-self: center;
 }
 
 .recipe-image img {
     width: 80%;
+    height: auto;
     text-align: center;
     box-shadow: 12px 12px var(--color-orange);
+
+
+
+
 }
 
-.info-desktop {
+.title-container {
+    grid-area: b;
+}
+
+.description {
+    grid-area: c;
+}
+
+
+.info {
+    grid-area: d;
 
     display: flex;
     gap: 3rem;
     justify-content: center;
+    flex-wrap: wrap;
 
-    margin: 2rem;
+    /* margin: 2rem; */
     padding: 2rem 0;
     border: 2px solid var(--color-orange);
     border-radius: 20px;
@@ -211,7 +288,7 @@ a:hover {
 
 
     img {
-        width: 100%;
+        width: 80%;
         height: auto;
     }
 
@@ -251,12 +328,15 @@ h2 {
     font-family: skranji-bold;
 }
 
+
 h3 {
     font-family: var(--font-extrabold);
+    color: var(--color-orange);
 }
 
 .subtitle {
     text-align: center;
+    color: black;
 }
 
 .steps-image img{
@@ -264,52 +344,28 @@ h3 {
     border-radius: 32px;
 }
 
-@media screen and (max-width: 950px) {
+footer {
+    background-color: var(--color-yellow);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
     .overview {
         margin: 2rem;
+        grid-template-areas: 
+        "a b"
+        "a c"
+        "d d";
+        margin-bottom: 0;
 
         .title {
             font-size: 2rem;
         }
     }
 
-    .info-desktop {
-        display: none;
-    }
-
-    .info-mobile {
-        grid-column: 1/span 2;
-        display: flex;
-        gap: 3rem;
-        justify-content: center;
-
-        margin: 2rem;
-        padding: 2rem 0;
-        border: 2px solid var(--color-orange);
-        border-radius: 20px;
-
-
-        div {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .icon {
-            margin: 0 auto;
-        }
-
-        img {
-            width: 45px;
-            text-align: center;
-        }
-
-
-        p {
-            margin: 0;
-        }
-
+    .info {
+        margin-top: 2rem;
     }
 
     .ingredients, .steps-detail {
@@ -330,10 +386,11 @@ h3 {
 
 
 
-
 }
 
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 650px) {
     .title {
         font-size: 2rem;
     }
@@ -362,35 +419,27 @@ h3 {
         }
     }
 
-    /* .ingredients {
-        .ingredients-image {
-            grid-column: 1/span 2;
-        }
+    .overview {
+        grid-template-areas:
+        "b b" 
+        "a a"
+        "c c"
+        "d d";
 
-        ul {
-            grid-column: 1/span 2;
-        }
-    } */
+    }
 
-    .steps-detail {
+    .info {
+        padding: 2rem 3.5rem;
+    }
+
+
+    .steps-detail, .ingredients {
 
             img {
                 width: 100%;
             }
     }
 
-
-    .description-mobile {
-        display: block;
-    }
-
-    .description-desktop {
-        display: none;
-    }
-
-    .info-mobile {
-        grid-column: 1/1;
-    }
 
 }
 

@@ -7,31 +7,21 @@ require_once 'includes/database.php';
 
 // require_once 'includes/db.php';
 
-$statement = $connection->prepare('SELECT * FROM recipes_test_run');
-$statement->execute();
-$recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
+// $statement = $connection->prepare('SELECT * FROM recipes_test_run');
 
-// Get the search input (if any)
-$search = $_GET['search'] ?? ''; // Default to empty string if not set
-$filter = $_GET['filter'] ?? ''; // Default to empty string if not set
+$search = $_GET['search'] ?? '';
+$filter = $_GET['filter'] ?? ''; 
 
-// Prepare a SQL query with a WHERE clause for filtering
-if (!empty($search) && !empty($filter)) {
-    // Filter by both search term and category
-    $statement = $connection->prepare('SELECT * FROM recipes_test_run WHERE (title LIKE ? OR ingredients LIKE ? OR protein LIKE ?) AND protein = ?');
-    $searchParam = '%' . $search . '%'; // Add wildcards for partial matching
-    $statement->bind_param('ssss', $searchParam, $searchParam, $searchParam, $filter);
-} elseif (!empty($search)) {
-    // Filter by search term only
-    $statement = $connection->prepare('SELECT * FROM recipes_test_run WHERE title LIKE ? OR ingredients LIKE ? OR protein LIKE ?');
+
+if (!empty($search)) {
+    $statement = $connection->prepare('SELECT * FROM recipes_test_run WHERE title LIKE ? OR subtitle LIKE ? OR ingredients LIKE ? OR protein LIKE ? OR cuisine LIKE ? OR cook_time LIKE ?');
     $searchParam = '%' . $search . '%';
-    $statement->bind_param('sss', $searchParam, $searchParam, $searchParam);
+    $statement->bind_param('ssssss',$searchParam, $searchParam, $searchParam,$searchParam, $searchParam, $searchParam);
 } elseif (!empty($filter)) {
-    // Filter by protein category only
     $statement = $connection->prepare('SELECT * FROM recipes_test_run WHERE protein = ?');
     $statement->bind_param('s', $filter);
+
 } else {
-    // If no search term or filter, fetch all recipes
     $statement = $connection->prepare('SELECT * FROM recipes_test_run');
 }
 
@@ -117,7 +107,7 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
 
             <!-- Reset Button -->
             <form action="recipes.php" method="get">
-                <button class="reset" type="submit" class="reset-button">Reset Filters</button>
+                <button type="submit" class="reset-button">Reset Filters</button>
             </form>
         </div>
     </div>
@@ -125,6 +115,7 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
     <h2>Try our recipes</h2>
 
     <div class="container">
+        
     <?php foreach ($recipes as $recipe): ?>
         <a href="detail.php?id=<?php echo $recipe['id']; ?>">
             <div class="card">
@@ -139,11 +130,12 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
         </a>
         
     <?php endforeach; ?>
-    <?php if (count($recipes) > 0): ?>
 
+    <?php if (count($recipes) > 0): ?>
     <?php else: ?>
         <p class="error">No recipes found matching "<?php echo htmlspecialchars($search); ?>"</p>
     <?php endif; ?>
+
 </div>
 
 

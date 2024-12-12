@@ -65,31 +65,32 @@ if (!$recipe) {
             <a href="">Instruction</a>
         </div> -->
 
+    <div class="back-to-top" id="back-to-top">
+        <img src="images/top-icon.png" alt="back to top button">
+    </div>
+
+    
+
     <div class="overview">
         <!-- recipe image -->
-        <div class="description-mobile">
-                <h1 class="title"><?php echo $recipe['title']; ?></h1>
-                <h3 class="subtitle"><?php echo $recipe['subtitle']; ?></h3>
-            </div>
 
         <div class="recipe-image">
             <img src="images/<?php echo $recipe['main_image']; ?>" alt="Recipe Image" class="recipe-image">
         </div>
             
 
-        <div>
-            <div class="description-desktop">
+            <div class="title-container">
                 <h1 class="title"><?php echo $recipe['title']; ?></h1>
                 <h3 class="subtitle"><?php echo $recipe['subtitle']; ?></h3>
             </div>
             
 
             <!-- Recipe Description -->
-            <p><?php echo $recipe['description']; ?></p>
+            <p class="description"><?php echo $recipe['description']; ?></p>
 
             <!-- Recipe Information -->
 
-            <div class="info-desktop">
+            <div class="info">
                 <div class="cook-time">
                     <div class="icon"><img src="images/clock-orange-icon.png" alt="clock icon"></div>
                     <p><?php echo $recipe['cook_time']; ?></p>
@@ -115,31 +116,6 @@ if (!$recipe) {
 
             
             
-        </div>
-
-        <div class="info-mobile">
-                <div class="cook-time">
-                    <div class="icon"><img src="images/clock-orange-icon.png" alt="clock icon"></div>
-                    <p><?php echo $recipe['cook_time']; ?></p>
-                </div>
-
-                <div class="serving-size">
-                    <div class="icon"><img src="images/serving-orange-icon.png" alt="serving icon"></div>
-                    <p><?php echo $recipe['serving_size']; ?></p>
-                </div>
-
-                <div class="protein">
-                    <div class="icon"><img src="images/meat-orange-icon.png" alt="meat icon"></div>
-                    <p><?php echo $recipe['protein']; ?></p>
-                </div>
-
-                <div class="calories">
-                    <div class="icon"><img src="images/calories-orange-icon.png" alt="calories icon"></div>
-                    <p><?php echo $recipe['calories']; ?></p>
-
-                </div>
-            
-            </div>
 
     </div>
 
@@ -200,7 +176,17 @@ if (!$recipe) {
 
                     
 
-        <script src="script/index.js"></script>
+
+   
     </div>
+
+    <footer>
+        <div>
+        <p>&copy; 2024 Yen Luong - The WOK</p>
+        </div>
+    </footer>
+
+    <script src="script/index.js"></script>
+
 </body>
 </html>

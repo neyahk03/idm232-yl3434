@@ -42,11 +42,12 @@ html {
     --font-bold: skranji-bold;
     --font-extrabold: poppins-extrabold;
 
+
 }
 
 body {
     margin: 0;
-    margin-bottom: 4rem;
+
     font-family: var(--font-regular);
     
     /* display: grid;
@@ -125,15 +126,8 @@ a:hover {
     font-size: 3rem;
 }
 
-.section-container {
-    /* display: flex;
-    gap: 2rem;
-    margin: 5rem 2rem; */
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 4rem  2rem;
+main {
+    flex:1;
 }
 
 .section {
@@ -141,25 +135,32 @@ a:hover {
     border-radius: 2rem;
     padding: 1rem 2rem;
     box-shadow: 8px 8px var(--color-orange);
+    margin: 0 20rem;
+    margin-bottom: 5rem;
 
     h2 {
         font-family: var(--font-extrabold);
         text-align: center;
-        color: var(--color-dark-orange);
+        color: var(--color-orange);
+    }
+
+    h2:first-child {
+        margin-top: 0;
     }
 }
 
-@media screen and (max-width: 950px) {
+
+@media screen and (max-width: 1200px) {
     .intro {
         margin: 0 2rem;
     }
 
-    .section-container {
-        grid-template-columns: 1fr;
+    .section {
+        margin: 0 3rem;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     .title {
         font-size: 2rem;
     }
