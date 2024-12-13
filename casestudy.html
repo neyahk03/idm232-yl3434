@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study</title>
+    <link rel="stylesheet" href="css/casestudy.css">
+    <link rel="icon" href="images/logo.png" />
+</head>
+
+<body>
+    <nav>
+        <div class="top">
+            <h1>The</h1>
+            <a class="logo-container" href="https://digmstudents.westphal.drexel.edu/~yl3434/index.php">
+            <img class="logo" src="images/logo.png" alt="logo">
+            </a>
+        </div>
+
+        <!-- <div class="btn_menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div>
+
+        <div class="navbar">
+            <a href="index.php">Home</a>
+            <a href="recipes.php">Recipes</a>
+            <a href="help.php">Help</a>
+        </div> -->
+
+
+    </nav>
+
+    <section>
+        <div class="pic">
+            <img src="images/recipe-screen.png" alt="Recipe Screen">
+        </div>
+    </section>
+
+    <section class="overview">
+        <h2>Overview</h2>
+        <p>This case study highlights the development of a recipe website using PHP, focusing on creating a dynamic, data-driven platform that integrates a MySQL database to retrieve and display recipes. The project aligns with the goals of the course, which emphasizes server-side programming, handling user input, managing databases, and implementing key features such as user authentication and dynamic content retrieval. The website aims to simplify recipe browsing by offering search and filter functionalities, providing users with an intuitive and interactive experience.</p>
+
+        <p>Key success metrics include:</p>
+        <ul>
+            <li>Improved user navigation through streamlined search features.</li>
+            <li>High engagement with the recipe content.</li>
+            <li>Positive feedback on the functionality and design.</li>
+        </ul>
+    </section>
+
+    <section class="challenge">
+        <h2>Context and Challenge</h2>
+
+        <h3>Background</h3>
+
+        <p>This is an independent project assigned as a practical exercise to deepen understanding of server-side scripting (PHP) and how it integrates with client-side technologies. The project also introduced database management concepts through phpMyAdmin, culminating in a functional, data-driven web application.
+        </p>
+
+        <h3>Timeline</h3>
+        <p>The project spanned 11 weeks, divided into three distinct phases:</p>
+
+        <ol>
+            <li><strong>Alpha Phase:</strong> Focused on branding and creating a responsive website using HTML, CSS, and JavaScript.</li>
+            <li><strong>Beta Phase:</strong> Transitioned to using PHP as the primary scripting language. Developed a functioning prototype that is responsive across devices (small to large screens) and includes dynamic content driven by a MySQL database.</li>
+            <li><strong>Final Phase:</strong> Polished the project to ensure all features worked seamlessly and met the project criteria.</li>
+        </ol>
+
+        <h3>The Problem</h3>
+        <p>The challenge was to design and develop a fully functional recipe website that dynamically loads data from a database while providing users with an engaging and intuitive experience for browsing and filtering recipes.</p>
+
+        <h3>Goals &amp; Objectives</h3>
+        <ul>
+            <li>Develop a dynamic website using PHP as the primary language.</li>
+            <li>Integrate MySQL for database management and dynamic content.</li>
+            <li>Create user-friendly features such as search, filtering, and detailed recipe pages.</li>
+            <li>Ensure responsiveness across various screen sizes.</li>
+        </ul>
+        <p>This was a solo project, where I managed all aspects of development, from concept to completion.</p>
+
+    </section>
+
+    <section class="process">
+        <h2>Process and Insight</h2>
+
+        <h3>Alpha Phase</h3>
+
+        <p>I started with branding by selecting a logo that I found visually appealing and building the website's design around it. From there, I developed a cohesive color palette and design aesthetic. Once the design foundation was set, I built the initial static version of the website using HTML, CSS, and JavaScript, ensuring it was responsive and visually appealing.</p>
+
+        <div class="pic">
+            <img src="images/recipe-screen-v1.png" alt="recipe screen ver1">
+        </div>
+
+        <h3>Beta Phase</h3>
+        <p>During this phase, I transitioned the static pages into dynamic ones using PHP. I established database connections with MySQL to store and retrieve recipe data efficiently. Using phpMyAdmin, I designed and managed a database to hold all the recipe details, including titles, subtitles, descriptions, ingredients, and images. I then integrated these elements into the website, enabling dynamic content display. </p>
+
+        <p>I decided to enhance the homepage by adding a feature to display three random recipes using a PHP query. F</p>
+
+        <div class="pic">
+            <img src="images/3-recipes.png" alt="3 recipes card">
+        </div>
+
+        <p>For the recipe page, I implemented a search and filter functionality, leveraging a foreach loop to dynamically display recipes based on user input or applied filters.</p>
+
+        <div class="pic">
+            <img src="images/searchbar.png" alt="search bar and filter">
+        </div>
+
+        <h3>Final Phase</h3>
+        <p>In the final phase, I focused on polishing the project to ensure all PHP scripts and database queries worked seamlessly. I optimized the code for better performance and conducted extensive responsive testing across various devices to guarantee a consistent user experience.</p>
+    </section>
+
+    <section class="solution">
+        <h2>The Solution</h2>
+
+        <div class="web">
+            <a href="https://digmstudents.westphal.drexel.edu/~yl3434/index.php" target="_blank">View final webpage</a>
+        </div>
+
+        <h3>Home Page</h3>
+        
+        <p>On the homepage, I implemented a feature to display three random recipes that update every time the page reloads. To ensure easy navigation, I added a "View All Recipes" button that links directly to the main recipe page.</p>
+
+
+        <figure class="large">
+            <img src="images/large-home.png" alt="large home screen">
+            <figcaption>Large Home Page</figcaption>
+        </figure>
+        
+        <div class="pic-group"> 
+            
+            <figure>
+                <img src="images/medium-home.png" alt="medium home page">
+                <figcaption>Medium Home Page</figcaption>
+            </figure>
+    
+            <figure>
+                <img src="images/small-home-1.png" alt="small home page">
+                <figcaption>Small Home Page</figcaption>
+            </figure>
+        </div>
+
+        <h3>Recipe Page</h3>
+        <p>The recipe page displays 40 recipes and includes a search bar and a protein filter. Users can search for recipes using keywords or narrow down results by selecting a specific protein type. I also added a "Clear Filter" button, which resets the filters and restores the full list of recipes. Each recipe card includes a clickable link that redirects users to its detailed page.
+
+        </p>
+
+        <figure class="large">
+            <img src="images/large-recipe.png" alt="large recipe screen">
+            <figcaption>Large Home Page</figcaption>
+        </figure>
+        
+        <div class="pic-group"> 
+            
+            <figure>
+                <img src="images/medium-recipe.png" alt="medium recipe page">
+                <figcaption>Medium Home Page</figcaption>
+            </figure>
+    
+            <figure>
+                <img src="images/small-recipe.png" alt="small recipe page">
+                <figcaption>Small Home Page</figcaption>
+            </figure>
+        </div>
+
+        <h3>Search Result and Error Screen</h3>
+
+        <div class="pic-group"> 
+            
+            <figure>
+                <img src="images/search-result.png" alt="search result screen">
+                <figcaption>Search Result Screen</figcaption>
+            </figure>
+    
+            <figure>
+                <img src="images/error.png" alt="error screen">
+                <figcaption>Error Screen</figcaption>
+            </figure>
+        </div>
+
+        <h3>Detail Page</h3>
+        <p>The detail page is designed to provide all necessary information about a specific recipe. It displays the recipe’s title, subtitle, and description, alongside a list of ingredients with corresponding images. I also included step-by-step instructions with visuals to guide users. The layout is fully responsive, adapting dynamically to different screen sizes for a seamless user experience.
+
+        </p>
+
+        <div class="pic-group"> 
+            
+            <figure class="detail">
+                <img src="images/large-detail.png" alt="large detail page">
+                <figcaption>Desktop Detail Page</figcaption>
+            </figure>
+
+            <figure class="detail">
+                <img src="images/medium-detail.png" alt="medium detail page">
+                <figcaption>Tablet Detail Page</figcaption>
+            </figure>
+    
+            <figure class="detail">
+                <img src="images/small-detail.png" alt="small detail page">
+                <figcaption>Mobile Detail Page</figcaption>
+            </figure>
+        </div>
+
+        <h3>Help Page</h3>
+        <p>To make the website more user-friendly, I included a help page that provides detailed guidance on navigating and using the website effectively.
+
+        </p>
+
+        <div class="pic-group"> 
+            
+            <figure class="detail">
+                <img src="images/large-help.png" alt="large help page">
+                <figcaption>Desktop Help Page</figcaption>
+            </figure>
+
+            <figure class="detail">
+                <img src="images/medium-help.png" alt="medium help page">
+                <figcaption>Tablet Help Page</figcaption>
+            </figure>
+    
+            <figure class="detail">
+                <img src="images/small-help.png" alt="small help page">
+                <figcaption>Mobile Help Page</figcaption>
+            </figure>
+        </div>
+
+
+        
+
+    
+    </section>
+
+    <section class="result">
+        <h2>The Results</h2>
+
+        <p>Throughout this project, I gained valuable experience in PHP and database integration. The project successfully met its objectives:</p>
+
+        <ul>
+            <li><strong>Functionality:</strong> Achieved seamless data retrieval and dynamic content display.</li>
+            <li><strong>User Experience:</strong> Positive feedback highlighted the intuitive design and effective filtering system.</li>
+            <li><strong>Skills Development:</strong> Improved proficiency in server-side programming and database management.</li>
+        </ul>
+
+
+        <p>The iterative process allowed me to refine the website's functionality and design. If given more time, I would implement additional features, such as filtering recipes by cook time, servings, or calories, to further enhance user experience.</p>
+    </section>
+</body>
+</html>

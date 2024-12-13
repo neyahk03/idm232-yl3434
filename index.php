@@ -3,9 +3,9 @@ error_reporting(E_ALL);
 ini_set('display_error', 1);
 ini_set('display_startup_errors', 1);
 
-require_once 'includes/database.php';
+// require_once 'includes/database.php';
 
-// require_once 'includes/db.php';
+require_once 'includes/db.php';
 
 $randomStatement = $connection->prepare('SELECT * FROM recipes_test_run ORDER BY RAND() LIMIT 3');
 $randomStatement->execute();
@@ -36,6 +36,13 @@ $randomRecipes = $randomStatement->get_result()->fetch_all(MYSQLI_ASSOC);
             </a>
         </div>
         
+        <div class="btn_menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div>
+
+        
 
         <div class="navbar">
             <a href="index.php">Home</a>
@@ -45,6 +52,14 @@ $randomRecipes = $randomStatement->get_result()->fetch_all(MYSQLI_ASSOC);
         
 
     </nav>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recipes.php">Recipes</a></li>
+            <li><a href="help.php">Help</a></li>
+        </ul>
+    </div> 
 
     <h1 class="title">Welcome to our home</h1>
     <h3>Try our most popular recipes</h3>
@@ -71,15 +86,9 @@ $randomRecipes = $randomStatement->get_result()->fetch_all(MYSQLI_ASSOC);
         <?php endif; ?>
     </div>
 
-    <button class="view-all">View all recipes</button>
+    <a class="view-all" href="recipes.php">View all recipes</a>
 
 
-
-
-
-    
-
-
-    <script src="/script/index.js"></script>
+    <script src="script/help.js"></script>
 </body>
 </html>

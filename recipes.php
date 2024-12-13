@@ -3,9 +3,9 @@ error_reporting(E_ALL);
 ini_set('display_error', 1);
 ini_set('display_startup_errors', 1);
 
-require_once 'includes/database.php';
+// require_once 'includes/database.php';
 
-// require_once 'includes/db.php';
+require_once 'includes/db.php';
 
 // $statement = $connection->prepare('SELECT * FROM recipes_test_run');
 
@@ -52,6 +52,12 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
             <img class="logo" src="images/logo.png" alt="logo">
             </a>
         </div>
+
+        <div class="btn_menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div>
         
 
         <div class="navbar">
@@ -62,6 +68,18 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
         
 
     </nav>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recipes.php">Recipes</a></li>
+            <li><a href="help.php">Help</a></li>
+        </ul>
+    </div> 
+
+    <div class="back-to-top" id="back-to-top">
+        <img src="images/top-icon.png" alt="back to top button">
+    </div>
 
     <div>
         <p class="question title">What are you feeling today?</p>
@@ -138,10 +156,17 @@ $recipes = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
 
 </div>
 
+<footer>
+        <div>
+        <p>&copy; 2024 Yen Luong - The WOK</p>
+        </div>
+    </footer>
 
 
 
 
-    <script src="/script/index.js"></script>
+
+    <script src="script/index.js"></script>
+    <script src="script/help.js"></script>
 </body>
 </html>

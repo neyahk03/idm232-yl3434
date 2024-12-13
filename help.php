@@ -15,20 +15,32 @@
     <nav>
         <div class="top">
             <h1>The</h1>
-            <a class="logo-container" href="index.html">
+            <a class="logo-container" href="index.php">
             <img class="logo" src="images/logo.png" alt="logo">
             </a>
         </div>
         
+        <div class="btn_menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div>
 
         <div class="navbar">
             <a href="index.php">Home</a>
             <a href="recipes.php">Recipes</a>
             <a href="help.php">Help</a>
         </div>
-        
 
     </nav>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recipes.php">Recipes</a></li>
+            <li><a href="help.php">Help</a></li>
+        </ul>
+    </div> 
 
     <div class="intro">
         <h1 class="title">Welcome to The WOK Help Page</h1>
@@ -58,10 +70,16 @@
         </ul>
     </div>
 
+    <div class="web">
+            <a href="https://digmstudents.westphal.drexel.edu/~yl3434/casestudy.html" target="_blank">View case study</a>
+        </div>
+
+    
 
 
 
-    <script src="/script/index.js"></script>
+
+    <script src="script/help.js"></script>
 
     
 </body>

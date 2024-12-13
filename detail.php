@@ -3,9 +3,9 @@ error_reporting(E_ALL);
 ini_set('display_error', 1);
 ini_set('display_startup_errors', 1);
 
-require_once 'includes/database.php';
+// require_once 'includes/database.php';
 
-// require_once 'includes/db.php';
+require_once 'includes/db.php';
 
 // Check if an ID is provided in the URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
@@ -50,6 +50,12 @@ if (!$recipe) {
             </a>
         </div>
 
+        <div class="btn_menu">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div>
+
         <div class="navbar">
             <a href="index.php">Home</a>
             <a href="recipes.php">Recipes</a>
@@ -59,11 +65,14 @@ if (!$recipe) {
 
     </nav>
 
-    <!-- <div class="menu">
-            <a href="">Overview</a>
-            <a href="">Ingredients</a>
-            <a href="">Instruction</a>
-        </div> -->
+    <div class="menu">
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="recipes.php">Recipes</a></li>
+            <li><a href="help.php">Help</a></li>
+        </ul>
+    </div> 
+
 
     <div class="back-to-top" id="back-to-top">
         <img src="images/top-icon.png" alt="back to top button">
@@ -187,6 +196,7 @@ if (!$recipe) {
     </footer>
 
     <script src="script/index.js"></script>
+    <script src="script/help.js"></script>
 
 </body>
 </html>

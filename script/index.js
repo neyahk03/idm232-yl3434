@@ -1,3 +1,4 @@
+
 const backtotop = document.getElementById('back-to-top');
 
 
@@ -15,3 +16,6 @@ backtotop.addEventListener('click', () => {
       behavior: 'smooth' 
   });
 });
+
+
+

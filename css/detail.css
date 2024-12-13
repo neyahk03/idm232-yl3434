@@ -113,38 +113,25 @@ nav {
     
 }
 
+.btn_menu, .menu {
+    display: none;
+}
 
+a {
+    text-decoration: none;
+}
 
 a:hover {
     color: var(--color-orange);
     transition: all 0.2s ease;
 }
 
-/* menu bar */
-/* .menu {
-    display: flex;
-    width: 100vw;
-    gap: 3rem;
-    justify-content: center;
-    color: var(--color-yellow-pale);
-    padding: 2rem 0;
-    font-family: var(--font-extrabold);
-    position: fixed;
-
-
-    background-color: var(--color-yellow-2);
-
-}
-
-.menu a:visited {
-    color: var(--color-yellow-pale);
-} */
 
 /* back to top button */
 .back-to-top {
     position: fixed;
     z-index: 1000;
-    right: 3rem;
+    right: 2rem;
     bottom: 1rem;
     cursor: pointer;
     /* display: none; */
@@ -227,7 +214,7 @@ a:hover {
 }
 
 .recipe-image img {
-    width: 80%;
+    width: 75%;
     height: auto;
     text-align: center;
     box-shadow: 12px 12px var(--color-orange);
@@ -255,7 +242,7 @@ a:hover {
     flex-wrap: wrap;
 
     /* margin: 2rem; */
-    padding: 2rem 0;
+    padding: 1rem 0;
     border: 2px solid var(--color-orange);
     border-radius: 20px;
 
@@ -395,15 +382,95 @@ footer {
         font-size: 2rem;
     }
 
+    nav {
+        padding: 1rem 2rem;
+        justify-content: space-between;
+        position: relative;
+        z-index: 100;
+    }
+
     .navbar {
-        display: flex;
-        flex-direction: column;
-        text-align: right;
+        display: none;
+    }
 
-        a {
-            padding: 1rem 0;
+    .btn_menu {
+        display: block;
 
+        border: none;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        z-index: 60;
+        cursor: pointer;
+    }
+    
+    .btn_menu div {
+        height: 5px;
+        width: 35px;
+        background-color: black;
+        margin: 3px 0;
+        transition: transform 0.3s;
+    }
+    
+    .btn_menu.change {
+    
+        .bar1 {
+            transform: translate(0, 9px) rotate(-45deg);
+            /* background-color: var(--background-color); */
         }
+        
+        .bar2 {opacity: 0;}
+        
+        .bar3 {
+            transform: translate(0, -7px) rotate(45deg);
+            /* background-color: var(--background-color); */
+        }
+    }
+
+    .menu {
+        display: block;
+
+        background-color: var(--color-yellow-pale);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        width: 100vw;
+        position: absolute;
+
+        transform: translateY(-195px);
+
+        /* transform: translateX(100vw); */
+        transition: transform 0.4s ease-in-out;
+        z-index: 50;
+        right: 0;
+        top: 0;
+
+        ul {
+            padding: 0;
+            font-size: 1.5rem;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 0;
+        }
+
+        ul li {
+            list-style-type: none;
+            font-family: var(--font-bold);
+            margin: 1rem 0;
+
+            
+        }
+
+        li a:visited {
+            color: black;
+        }
+
+    }
+    
+    .menu.open {
+        transform: translateY(132px);
     }
 
     .top h1 {
